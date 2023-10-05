@@ -1,0 +1,21 @@
+<div class="container">
+  <h2>Lista de Pessoas</h2>
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let pessoa of pessoas">
+      {{ pessoa.nome }} (Idade: {{ pessoa.idade }})
+    </li>
+  </ul>
+
+  <h2>Adicionar Pessoa</h2>
+  <form (ngSubmit)="adicionarPessoa()">
+    <div class="form-group">
+      <label for="titulo">Nome:</label>
+      <input type="text" class="form-control" id="nome" [(ngModel)]="novoPessoa.nome" name="nome" required>
+    </div>
+    <div class="form-group">
+      <label for="autor">Idade:</label>
+      <input type="text" class="form-control" id="idade" [(ngModel)]="novoPessoa.idade" name="idade" required>
+    </div>
+    <button type="submit" class="btn btn-primary" style="margin-top:1rem ;">Adicionar Pessoa</button>
+  </form>
+</div>

@@ -1,0 +1,21 @@
+<div class="container">
+  <h2>Lista de Carros</h2>
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let carro of carros">
+      {{ carro.nome }} (Ano: {{ carro.ano }})
+    </li>
+  </ul>
+
+  <h2>Adicionar Carro</h2>
+  <form (ngSubmit)="adicionarCarro()">
+    <div class="form-group">
+      <label for="titulo">Nome:</label>
+      <input type="text" class="form-control" id="nome" [(ngModel)]="novoCarro.nome" name="nome" required>
+    </div>
+    <div class="form-group">
+      <label for="autor">Ano:</label>
+      <input type="text" class="form-control" id="ano" [(ngModel)]="novoCarro.ano" name="ano" required>
+    </div>
+    <button type="submit" class="btn btn-primary" style="margin-top:1rem ;">Adicionar Carro</button>
+  </form>
+</div>
